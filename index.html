@@ -9,17 +9,244 @@
     <link rel="stylesheet" href="assets/css/components/input/input.css">
     <link rel="stylesheet" href="assets/css/components/button/button.css">
     <link rel="stylesheet" href="assets/css/pages/home_page.css">
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
-}
-</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .btn {
+            background-color: #3B52DB;
+            outline: none;
+            border: none;
+            padding: 15px 48px;
+            border-radius: 8px;
+            color: #fff;
+            max-height: 48px;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn>a {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        input {
+            width: 320px;
+            height: 48px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            border: 1.4px solid rgba(59, 82, 219, 0.17);
+            font-size: 20px;
+            padding-left: 22px;
+        }
+
+        #search-container {
+            width: 80%;
+            max-height: 130px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            border-radius: 8px;
+            background: #FFF;
+            align-items: center;
+            padding: 40px 28px;
+            box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
+            font-size: 18px;
+            margin-top: 71px;
+        }
+
+        #table-container {
+            width: 95%;
+            margin: 57px auto;
+        }
+
+        .container-item {
+            border-radius: 8px;
+            background: #FFF;
+            box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
+            padding: 40px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+
+        .short-details {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .short-infos {
+            display: flex;
+            align-items: center;
+        }
+
+        .personal-short-info {
+            color: #000;
+            font-family: Inter;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: bold;
+            line-height: normal;
+            letter-spacing: 0.2px;
+            padding-left: 70px;
+        }
+
+        .more-details {
+            /* display: none; */
+            flex-direction: column;
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            height: 0px;
+        }
+
+        .more-details.active {
+            transition: all 250ms ease-in;
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+        }
+
+        .details-row {
+            justify-content: space-between;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .detail-header {
+            color: rgba(0, 0, 0, 0.60);
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.16px;
+        }
+
+        .detail-value {
+            color: #000;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.16px;
+            margin-top: 10px;
+        }
+
+        .details-row:not(:first-child) {
+            margin-top: 70px;
+        }
+
+        .details-row:first-child {
+            margin-top: 47px;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .details-sections {
+            margin-top: 10px;
+            margin-right: 66px;
+        }
+
+        section {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        section>div {
+            padding: 0;
+            margin: 0 !important;
+            width: 33.3%;
+            margin-top: 20px !important;
+        }
+
+        .inputs {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .inputs {
+                width: 100%;
+
+            }
+
+            #search-container {
+                flex-direction: column;
+                width: auto;
+            }
+
+            input {
+                width: 45%;
+                font-size: 12px;
+                height: 34px;
+            }
+
+            .search-btn {
+                margin-top: 10px;
+                width: 100% !important;
+                padding: 6px 133px;
+            }
+
+            .detail-header,
+            .detail-value {
+                font-size: 12px;
+            }
+
+            .personal-short-info {
+                font-size: 12px;
+                padding-left: 0;
+            }
+
+            .btn {
+                padding: 9px 20px;
+                height: 34px;
+                width: 130px;
+            }
+
+            .btn>a {
+                font-size: 12px;
+
+            }
+
+            .container-item {
+                padding: 15px;
+            }
+        }
+
+        @media only screen and (max-width: 418px) {
+            .personal-short-info {
+                font-size: 10px;
+            }
+
+            .search-btn {
+                font-size: 10px;
+            }
+
+            .btn>a {
+                font-size: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -35,7 +262,7 @@
         </div>
         <div id="table-container">
 
-            
+
             <div class="container-item">
                 <div class="short-details">
                     <div class="short-infos">
@@ -47,85 +274,85 @@
                     </button>
                 </div>
                 <div class="more-details">
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Qohumluq</div>
-                                <div class="detail-value">A/B</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Təvəllüd</div>
-                                <div class="detail-value">02.02.1974</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İşğalRayon</div>
-                                <div class="detail-value">Bakı</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Kənd</div>
-                                <div class="detail-value">Yasamal</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">FIN</div>
-                                <div class="detail-value">ABC2DEF</div>
-                            </div>
-
-                            <div class="details-sections">
-                                <div class="detail-header">Telefon nömrəsi</div>
-                                <div class="detail-value">+994507883456</div>
-                                <div class="detail-value">+994557883456</div>
-
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Rayon</div>
-                                <div class="detail-value">Sumqayıt</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Obyekt tipi</div>
-                                <div class="detail-value">Şəxsi mənzil kupçasız</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Ünvan</div>
-                                <div class="detail-value">Her hansı bir
-                                    uzun ünvan yeri</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Təhsil</div>
-                                <div class="detail-value">Şagird-orta</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Xüsusi Status</div>
-                                <div class="detail-value">Müharibə veteranı</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Peşə adı</div>
-                                <div class="detail-value">nəsə</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İş strukturu</div>
-                                <div class="detail-value">Dövlət</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İş vəzifəsi</div>
-                                <div class="detail-value">Digər</div>
-                            </div>
-                        </section>
+                    <section>
                         <div class="details-sections">
-                            <div class="detail-header">Hal=hazırdakı vəzifə</div>
-                            <div class="detail-value">Təqaüüdçü</div>
+                            <div class="detail-header">Qohumluq</div>
+                            <div class="detail-value">A/B</div>
                         </div>
                         <div class="details-sections">
-                            <div class="detail-header">Ümumi məlumat</div>
-                            <div class="detail-value">Lorem ipsum dolor sit amet consectetur. Volutpat aliquam massa a
-                                posuere turpis nunc. Eu a ultricies quis tristique et orci.</div>
+                            <div class="detail-header">Təvəllüd</div>
+                            <div class="detail-value">02.02.1974</div>
                         </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İşğalRayon</div>
+                            <div class="detail-value">Bakı</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Kənd</div>
+                            <div class="detail-value">Yasamal</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">FIN</div>
+                            <div class="detail-value">ABC2DEF</div>
+                        </div>
+
+                        <div class="details-sections">
+                            <div class="detail-header">Telefon nömrəsi</div>
+                            <div class="detail-value">+994507883456</div>
+                            <div class="detail-value">+994557883456</div>
+
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Rayon</div>
+                            <div class="detail-value">Sumqayıt</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Obyekt tipi</div>
+                            <div class="detail-value">Şəxsi mənzil kupçasız</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Ünvan</div>
+                            <div class="detail-value">Her hansı bir
+                                uzun ünvan yeri</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Təhsil</div>
+                            <div class="detail-value">Şagird-orta</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Xüsusi Status</div>
+                            <div class="detail-value">Müharibə veteranı</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Peşə adı</div>
+                            <div class="detail-value">nəsə</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İş strukturu</div>
+                            <div class="detail-value">Dövlət</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İş vəzifəsi</div>
+                            <div class="detail-value">Digər</div>
+                        </div>
+                    </section>
+                    <div class="details-sections">
+                        <div class="detail-header">Hal=hazırdakı vəzifə</div>
+                        <div class="detail-value">Təqaüüdçü</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">Ümumi məlumat</div>
+                        <div class="detail-value">Lorem ipsum dolor sit amet consectetur. Volutpat aliquam massa a
+                            posuere turpis nunc. Eu a ultricies quis tristique et orci.</div>
+                    </div>
                 </div>
             </div>
             <div class="container-item">
@@ -135,89 +362,89 @@
                         <div class="personal-short-info">Adam2 Soyad2 Ata adi2</div>
                     </div>
                     <button class="btn">
-                       <a href="https://maps.google.com/?cid=424320506738430745&entry=gps"> Xəritədə Göstər</a>
+                        <a href="https://maps.google.com/?cid=424320506738430745&entry=gps"> Xəritədə Göstər</a>
                     </button>
                 </div>
                 <div class="more-details">
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Qohumluq</div>
-                                <div class="detail-value">A/B</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Təvəllüd</div>
-                                <div class="detail-value">02.02.1974</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İşğalRayon</div>
-                                <div class="detail-value">Bakı</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Kənd</div>
-                                <div class="detail-value">Yasamal</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">FIN</div>
-                                <div class="detail-value">ABC2DEF</div>
-                            </div>
-
-                            <div class="details-sections">
-                                <div class="detail-header">Telefon nömrəsi</div>
-                                <div class="detail-value">+994507883456</div>
-                                <div class="detail-value">+994557883456</div>
-
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Rayon</div>
-                                <div class="detail-value">Sumqayıt</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Obyekt tipi</div>
-                                <div class="detail-value">Şəxsi mənzil kupçasız</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Ünvan</div>
-                                <div class="detail-value">Her hansı bir
-                                    uzun ünvan yeri</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Təhsil</div>
-                                <div class="detail-value">Şagird-orta</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Xüsusi Status</div>
-                                <div class="detail-value">Müharibə veteranı</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Peşə adı</div>
-                                <div class="detail-value">nəsə</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İş strukturu</div>
-                                <div class="detail-value">Dövlət</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İş vəzifəsi</div>
-                                <div class="detail-value">Digər</div>
-                            </div>
-                        </section>
+                    <section>
                         <div class="details-sections">
-                            <div class="detail-header">Hal=hazırdakı vəzifə</div>
-                            <div class="detail-value">Təqaüüdçü</div>
+                            <div class="detail-header">Qohumluq</div>
+                            <div class="detail-value">A/B</div>
                         </div>
                         <div class="details-sections">
-                            <div class="detail-header">Ümumi məlumat</div>
-                            <div class="detail-value">Lorem ipsum dolor sit amet consectetur. Volutpat aliquam massa a
-                                posuere turpis nunc. Eu a ultricies quis tristique et orci.</div>
+                            <div class="detail-header">Təvəllüd</div>
+                            <div class="detail-value">02.02.1974</div>
                         </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İşğalRayon</div>
+                            <div class="detail-value">Bakı</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Kənd</div>
+                            <div class="detail-value">Yasamal</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">FIN</div>
+                            <div class="detail-value">ABC2DEF</div>
+                        </div>
+
+                        <div class="details-sections">
+                            <div class="detail-header">Telefon nömrəsi</div>
+                            <div class="detail-value">+994507883456</div>
+                            <div class="detail-value">+994557883456</div>
+
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Rayon</div>
+                            <div class="detail-value">Sumqayıt</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Obyekt tipi</div>
+                            <div class="detail-value">Şəxsi mənzil kupçasız</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Ünvan</div>
+                            <div class="detail-value">Her hansı bir
+                                uzun ünvan yeri</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Təhsil</div>
+                            <div class="detail-value">Şagird-orta</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Xüsusi Status</div>
+                            <div class="detail-value">Müharibə veteranı</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Peşə adı</div>
+                            <div class="detail-value">nəsə</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İş strukturu</div>
+                            <div class="detail-value">Dövlət</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İş vəzifəsi</div>
+                            <div class="detail-value">Digər</div>
+                        </div>
+                    </section>
+                    <div class="details-sections">
+                        <div class="detail-header">Hal=hazırdakı vəzifə</div>
+                        <div class="detail-value">Təqaüüdçü</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">Ümumi məlumat</div>
+                        <div class="detail-value">Lorem ipsum dolor sit amet consectetur. Volutpat aliquam massa a
+                            posuere turpis nunc. Eu a ultricies quis tristique et orci.</div>
+                    </div>
                 </div>
             </div>
             <div class="container-item">
@@ -227,89 +454,91 @@
                         <div class="personal-short-info">Adam3 Soyad3 Ata adi3</div>
                     </div>
                     <button class="btn">
-                        <a href="https://www.google.com/maps/place/161+sayl%C4%B1+tam+orta+m%C9%99kt%C9%99b/@40.3722048,49.8027446,15.5z/data=!4m6!3m5!1s0x40307d08bfa56afd:0x3c0117a4f2926e93!8m2!3d40.3756714!4d49.7969159!16s%2Fg%2F11gycqd4r2?entry=ttu">Xəritədə Göstər</a>
+                        <a
+                            href="https://www.google.com/maps/place/161+sayl%C4%B1+tam+orta+m%C9%99kt%C9%99b/@40.3722048,49.8027446,15.5z/data=!4m6!3m5!1s0x40307d08bfa56afd:0x3c0117a4f2926e93!8m2!3d40.3756714!4d49.7969159!16s%2Fg%2F11gycqd4r2?entry=ttu">Xəritədə
+                            Göstər</a>
                     </button>
                 </div>
                 <div class="more-details">
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Qohumluq</div>
-                                <div class="detail-value">A/B</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Təvəllüd</div>
-                                <div class="detail-value">02.02.1974</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İşğalRayon</div>
-                                <div class="detail-value">Bakı</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Kənd</div>
-                                <div class="detail-value">Yasamal</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">FIN</div>
-                                <div class="detail-value">ABC2DEF</div>
-                            </div>
-
-                            <div class="details-sections">
-                                <div class="detail-header">Telefon nömrəsi</div>
-                                <div class="detail-value">+994507883456</div>
-                                <div class="detail-value">+994557883456</div>
-
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Rayon</div>
-                                <div class="detail-value">Sumqayıt</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Obyekt tipi</div>
-                                <div class="detail-value">Şəxsi mənzil kupçasız</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Ünvan</div>
-                                <div class="detail-value">Her hansı bir
-                                    uzun ünvan yeri</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Təhsil</div>
-                                <div class="detail-value">Şagird-orta</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Xüsusi Status</div>
-                                <div class="detail-value">Müharibə veteranı</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Peşə adı</div>
-                                <div class="detail-value">nəsə</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İş strukturu</div>
-                                <div class="detail-value">Dövlət</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İş vəzifəsi</div>
-                                <div class="detail-value">Digər</div>
-                            </div>
-                        </section>
+                    <section>
                         <div class="details-sections">
-                            <div class="detail-header">Hal=hazırdakı vəzifə</div>
-                            <div class="detail-value">Təqaüüdçü</div>
+                            <div class="detail-header">Qohumluq</div>
+                            <div class="detail-value">A/B</div>
                         </div>
                         <div class="details-sections">
-                            <div class="detail-header">Ümumi məlumat</div>
-                            <div class="detail-value">Lorem ipsum dolor sit amet consectetur. Volutpat aliquam massa a
-                                posuere turpis nunc. Eu a ultricies quis tristique et orci.</div>
+                            <div class="detail-header">Təvəllüd</div>
+                            <div class="detail-value">02.02.1974</div>
                         </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İşğalRayon</div>
+                            <div class="detail-value">Bakı</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Kənd</div>
+                            <div class="detail-value">Yasamal</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">FIN</div>
+                            <div class="detail-value">ABC2DEF</div>
+                        </div>
+
+                        <div class="details-sections">
+                            <div class="detail-header">Telefon nömrəsi</div>
+                            <div class="detail-value">+994507883456</div>
+                            <div class="detail-value">+994557883456</div>
+
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Rayon</div>
+                            <div class="detail-value">Sumqayıt</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Obyekt tipi</div>
+                            <div class="detail-value">Şəxsi mənzil kupçasız</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Ünvan</div>
+                            <div class="detail-value">Her hansı bir
+                                uzun ünvan yeri</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Təhsil</div>
+                            <div class="detail-value">Şagird-orta</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Xüsusi Status</div>
+                            <div class="detail-value">Müharibə veteranı</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Peşə adı</div>
+                            <div class="detail-value">nəsə</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İş strukturu</div>
+                            <div class="detail-value">Dövlət</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İş vəzifəsi</div>
+                            <div class="detail-value">Digər</div>
+                        </div>
+                    </section>
+                    <div class="details-sections">
+                        <div class="detail-header">Hal=hazırdakı vəzifə</div>
+                        <div class="detail-value">Təqaüüdçü</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">Ümumi məlumat</div>
+                        <div class="detail-value">Lorem ipsum dolor sit amet consectetur. Volutpat aliquam massa a
+                            posuere turpis nunc. Eu a ultricies quis tristique et orci.</div>
+                    </div>
                 </div>
             </div>
             <div class="container-item">
@@ -319,96 +548,261 @@
                         <div class="personal-short-info">Adam4 Soyad4 Ata adi4</div>
                     </div>
                     <button class="btn">
-                        <a href="https://www.google.com/maps/place/Sahil+Ba%C4%9F%C4%B1/@40.371869,49.8451224,18.01z/data=!4m6!3m5!1s0x40307dae5c39db6b:0x12d1ffce0d87fbfa!8m2!3d40.3732047!4d49.8457506!16s%2Fg%2F1vhq25pj?entry=ttu">Xəritədə Göstər</a>
+                        <a
+                            href="https://www.google.com/maps/place/Sahil+Ba%C4%9F%C4%B1/@40.371869,49.8451224,18.01z/data=!4m6!3m5!1s0x40307dae5c39db6b:0x12d1ffce0d87fbfa!8m2!3d40.3732047!4d49.8457506!16s%2Fg%2F1vhq25pj?entry=ttu">Xəritədə
+                            Göstər</a>
                     </button>
                 </div>
                 <div class="more-details">
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Qohumluq</div>
-                                <div class="detail-value">A/B</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Təvəllüd</div>
-                                <div class="detail-value">02.02.1974</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İşğalRayon</div>
-                                <div class="detail-value">Bakı</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Kənd</div>
-                                <div class="detail-value">Yasamal</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">FIN</div>
-                                <div class="detail-value">ABC2DEF</div>
-                            </div>
-
-                            <div class="details-sections">
-                                <div class="detail-header">Telefon nömrəsi</div>
-                                <div class="detail-value">+994507883456</div>
-                                <div class="detail-value">+994557883456</div>
-
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Rayon</div>
-                                <div class="detail-value">Sumqayıt</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Obyekt tipi</div>
-                                <div class="detail-value">Şəxsi mənzil kupçasız</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Ünvan</div>
-                                <div class="detail-value">Her hansı bir
-                                    uzun ünvan yeri</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Təhsil</div>
-                                <div class="detail-value">Şagird-orta</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">Xüsusi Status</div>
-                                <div class="detail-value">Müharibə veteranı</div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="details-sections">
-                                <div class="detail-header">Peşə adı</div>
-                                <div class="detail-value">nəsə</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İş strukturu</div>
-                                <div class="detail-value">Dövlət</div>
-                            </div>
-                            <div class="details-sections">
-                                <div class="detail-header">İş vəzifəsi</div>
-                                <div class="detail-value">Digər</div>
-                            </div>
-                        </section>
+                    <section>
                         <div class="details-sections">
-                            <div class="detail-header">Hal=hazırdakı vəzifə</div>
-                            <div class="detail-value">Təqaüüdçü</div>
+                            <div class="detail-header">Qohumluq</div>
+                            <div class="detail-value">A/B</div>
                         </div>
                         <div class="details-sections">
-                            <div class="detail-header">Ümumi məlumat</div>
-                            <div class="detail-value">Lorem ipsum dolor sit amet consectetur. Volutpat aliquam massa a
-                                posuere turpis nunc. Eu a ultricies quis tristique et orci.</div>
+                            <div class="detail-header">Təvəllüd</div>
+                            <div class="detail-value">02.02.1974</div>
                         </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İşğalRayon</div>
+                            <div class="detail-value">Bakı</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Kənd</div>
+                            <div class="detail-value">Yasamal</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">FIN</div>
+                            <div class="detail-value">ABC2DEF</div>
+                        </div>
+
+                        <div class="details-sections">
+                            <div class="detail-header">Telefon nömrəsi</div>
+                            <div class="detail-value">+994507883456</div>
+                            <div class="detail-value">+994557883456</div>
+
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Rayon</div>
+                            <div class="detail-value">Sumqayıt</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Obyekt tipi</div>
+                            <div class="detail-value">Şəxsi mənzil kupçasız</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Ünvan</div>
+                            <div class="detail-value">Her hansı bir
+                                uzun ünvan yeri</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Təhsil</div>
+                            <div class="detail-value">Şagird-orta</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">Xüsusi Status</div>
+                            <div class="detail-value">Müharibə veteranı</div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="details-sections">
+                            <div class="detail-header">Peşə adı</div>
+                            <div class="detail-value">nəsə</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İş strukturu</div>
+                            <div class="detail-value">Dövlət</div>
+                        </div>
+                        <div class="details-sections">
+                            <div class="detail-header">İş vəzifəsi</div>
+                            <div class="detail-value">Digər</div>
+                        </div>
+                    </section>
+                    <div class="details-sections">
+                        <div class="detail-header">Hal=hazırdakı vəzifə</div>
+                        <div class="detail-value">Təqaüüdçü</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">Ümumi məlumat</div>
+                        <div class="detail-value">Lorem ipsum dolor sit amet consectetur. Volutpat aliquam massa a
+                            posuere turpis nunc. Eu a ultricies quis tristique et orci.</div>
+                    </div>
                 </div>
             </div>
 
         </div>
     </main>
-    <script src="assets/js/show-details.js"></script>
-    <script src="assets/js/search-user.js"></script>
+    <script>
+        const container_items = [...document.querySelectorAll(".container-item")];
+        container_items.forEach(item => {
+            item.addEventListener("click", e => {
+                if (![...e.target.classList].includes("btn") && [...e.currentTarget.classList].includes("container-item")) {
+                    console.log(e.target);
+                    console.log();
+                    const active = document.querySelector(".more-details.active");
+                    e.currentTarget.querySelector(".more-details").classList.toggle("active");
+                    if (active) active.classList.remove("active")
+
+                }
+            })
+        })
+        const name_inp = document.getElementById("name");
+        const surname_inp = document.getElementById("surname");
+        const search_btn = document.querySelector(".search-btn");
+        const table_container = document.getElementById("table-container");
+        const users = [
+            {
+                name: "adam1",
+                surname: "soyad1",
+                text: "Adam1 Soyad1 Ata adi1"
+            },
+            {
+                name: "adam2",
+                surname: "soyad2",
+                text: "Adam2 Soyad2 Ata adi2"
+            },
+            {
+                name: "adam3",
+                surname: "soyad3",
+                text: "Adam3 Soyad3 Ata adi3"
+            },
+            {
+                name: "adam4",
+                surname: "soyad4",
+                text: "Adam4 Soyad4 Ata adi4"
+            },
+        ]
+        const List = (array) => {
+            table_container.innerHTML = ``
+            array.forEach(element => {
+                const div = document.createElement("div");
+                div.classList.add("container-item");
+                div.innerHTML = `
+            <div class="short-details">
+            <div class="short-infos">
+                <img src="./assets/icons/profile-icon.svg" alt="">
+                <div class="personal-short-info">${element.text}</div>
+            </div>
+            <button class="btn">
+                Xəritədə Göstər
+            </button>
+        </div>
+        <div class="more-details">
+                <section>
+                    <div class="details-sections">
+                        <div class="detail-header">Qohumluq</div>
+                        <div class="detail-value">A/B</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">Təvəllüd</div>
+                        <div class="detail-value">02.02.1974</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">İşğalRayon</div>
+                        <div class="detail-value">Bakı</div>
+                    </div>
+                </section>
+                <section>
+                    <div class="details-sections">
+                        <div class="detail-header">Kənd</div>
+                        <div class="detail-value">Yasamal</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">FIN</div>
+                        <div class="detail-value">ABC2DEF</div>
+                    </div>
+
+                    <div class="details-sections">
+                        <div class="detail-header">Telefon nömrəsi</div>
+                        <div class="detail-value">+994507883456</div>
+                        <div class="detail-value">+994557883456</div>
+
+                    </div>
+                </section>
+                <section>
+                    <div class="details-sections">
+                        <div class="detail-header">Rayon</div>
+                        <div class="detail-value">Sumqayıt</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">Obyekt tipi</div>
+                        <div class="detail-value">Şəxsi mənzil kupçasız</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">Ünvan</div>
+                        <div class="detail-value">Her hansı bir
+                            uzun ünvan yeri</div>
+                    </div>
+                </section>
+                <section>
+                    <div class="details-sections">
+                        <div class="detail-header">Təhsil</div>
+                        <div class="detail-value">Şagird-orta</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">Xüsusi Status</div>
+                        <div class="detail-value">Müharibə veteranı</div>
+                    </div>
+                </section>
+                <section>
+                    <div class="details-sections">
+                        <div class="detail-header">Peşə adı</div>
+                        <div class="detail-value">nəsə</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">İş strukturu</div>
+                        <div class="detail-value">Dövlət</div>
+                    </div>
+                    <div class="details-sections">
+                        <div class="detail-header">İş vəzifəsi</div>
+                        <div class="detail-value">Digər</div>
+                    </div>
+                </section>
+                <div class="details-sections">
+                    <div class="detail-header">Hal=hazırdakı vəzifə</div>
+                    <div class="detail-value">Təqaüüdçü</div>
+                </div>
+                <div class="details-sections">
+                    <div class="detail-header">Ümumi məlumat</div>
+                    <div class="detail-value">Lorem ipsum dolor sit amet consectetur. Volutpat aliquam massa a
+                        posuere turpis nunc. Eu a ultricies quis tristique et orci.</div>
+                </div>
+        </div>
+            `
+                table_container.append(div)
+            });
+        }
+        search_btn.addEventListener("click", () => {
+            const name = name_inp.value.trim().toLowerCase();
+            const surname = surname_inp.value.trim().toLowerCase();
+            if (name && surname) {
+                const user = users.filter(u => u.name === name && u.surname === surname);
+                return List(user)
+
+            }
+            if (name && !surname) {
+                const user = users.filter(u => u.name === name);
+                return List(user)
+
+            }
+            if (!name && surname) {
+                const user = users.filter(u => u.surname === surname);
+                return List(user)
+
+            }
+            if (!name && !surname) {
+                return List(users)
+            }
+
+        })
+    </script>
+
 </body>
 
 </html>
