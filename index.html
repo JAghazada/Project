@@ -660,22 +660,26 @@
             {
                 name: "adam1",
                 surname: "soyad1",
-                text: "Adam1 Soyad1 Ata adi1"
+                text: "Adam1 Soyad1 Ata adi1",
+                link:"http://maps.google.co.uk/maps?q=51.917168,-0.227051"
             },
             {
                 name: "adam2",
                 surname: "soyad2",
-                text: "Adam2 Soyad2 Ata adi2"
+                text: "Adam2 Soyad2 Ata adi2",
+                link:"https://maps.google.com/?cid=424320506738430745&entry=gps"
             },
             {
                 name: "adam3",
                 surname: "soyad3",
-                text: "Adam3 Soyad3 Ata adi3"
+                text: "Adam3 Soyad3 Ata adi3",
+                link:"https://www.google.com/maps/place/161+sayl%C4%B1+tam+orta+m%C9%99kt%C9%99b/@40.3722048,49.8027446,15.5z/data=!4m6!3m5!1s0x40307d08bfa56afd:0x3c0117a4f2926e93!8m2!3d40.3756714!4d49.7969159!16s%2Fg%2F11gycqd4r2?entry=ttu"
             },
             {
                 name: "adam4",
                 surname: "soyad4",
-                text: "Adam4 Soyad4 Ata adi4"
+                text: "Adam4 Soyad4 Ata adi4",
+                link:"https://www.google.com/maps/place/Sahil+Ba%C4%9F%C4%B1/@40.371869,49.8451224,18.01z/data=!4m6!3m5!1s0x40307dae5c39db6b:0x12d1ffce0d87fbfa!8m2!3d40.3732047!4d49.8457506!16s%2Fg%2F1vhq25pj?entry=ttu"
             },
         ]
         const List = (array) => {
@@ -690,7 +694,8 @@
                 <div class="personal-short-info">${element.text}</div>
             </div>
             <button class="btn">
-                Xəritədə Göstər
+                <a href="${element.link}">Xəritədə Göstər</a>
+                
             </button>
         </div>
         <div class="more-details">
